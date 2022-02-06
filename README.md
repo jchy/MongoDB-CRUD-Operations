@@ -46,3 +46,10 @@ Basic commands to perform CRUD operation on Mongo DB
     }
   )
 ```
+- The replacement document can have different fields from the original document. In the replacement document, you can omit the _id field since the _id field is immutable; however, if you do include the _id field, it must have the same value as the current value.
+```js
+db.accounts.replaceOne(
+  { account_id: 371138 },
+  { account_id: 893421, limit: 5000, products: [ "Investment", "Brokerage" ] }
+)
+```
