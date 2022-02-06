@@ -58,3 +58,13 @@ db.accounts.replaceOne(
 ```
   db.movies.deleteMany({})
 ```
+- To specify equality conditions, use : expressions in the query filter document.
+- To delete all documents that match a deletion criteria, pass a filter parameter to the deleteMany() method.
+```js
+db.movies.deleteMany( { title: "Titanic" } )
+```
+- To delete at most a single document that matches a specified filter (even though multiple documents may match the specified filter) use the 
+```js
+  // db.collection.deleteOne() method.
+  db.movies.deleteOne( { cast: "Brad Pitt" } )
+  ```
