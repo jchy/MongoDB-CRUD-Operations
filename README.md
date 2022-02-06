@@ -26,3 +26,23 @@ Basic commands to perform CRUD operation on Mongo DB
  
  db.movies.find( { rated: { $in: [ "PG", "PG-13" ] } } )
 ```
+- Update a single document in databse 
+```js
+  db.movies.updateOne( { title: "Tag" },
+  {
+    $set: {
+      plot: "One month every year, five highly competitive friends
+             hit the ground running for a no-holds-barred game of tag"
+    }
+    { $currentDate: { lastUpdated: true } }
+  })
+```
+- Update all documents that match a specifier filter
+```js
+  db.listingsAndReviews.updateMany(
+    { security_deposit: { $lt: 100 } },
+    {
+      $set: { security_deposit: 100, minimum_nights: 1 }
+    }
+  )
+```
