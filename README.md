@@ -53,3 +53,8 @@ db.accounts.replaceOne(
   { account_id: 893421, limit: 5000, products: [ "Investment", "Brokerage" ] }
 )
 ```
+### Delete All Documents
+- To delete all documents from a collection, pass an empty filter document {} to the db.collection.deleteMany() method.
+```
+  db.movies.deleteMany({})
+```
